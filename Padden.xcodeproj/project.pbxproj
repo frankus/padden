@@ -13,6 +13,10 @@
 		01F6A4D41B02F8B700994F6C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01F6A4D31B02F8B700994F6C /* Images.xcassets */; };
 		01F6A4D71B02F8B700994F6C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01F6A4D51B02F8B700994F6C /* LaunchScreen.xib */; };
 		01F6A4E31B02F8B700994F6C /* PaddenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F6A4E21B02F8B700994F6C /* PaddenTests.swift */; };
+		01F6A4ED1B02F8CA00994F6C /* Padden.png in Resources */ = {isa = PBXBuildFile; fileRef = 01F6A4EC1B02F8CA00994F6C /* Padden.png */; };
+		01F6A4EF1B02F94000994F6C /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01F6A4EE1B02F94000994F6C /* MapKit.framework */; };
+		01F6A4F11B03002C00994F6C /* OverlayRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F6A4F01B03002C00994F6C /* OverlayRenderer.swift */; };
+		01F6A4F31B0454F200994F6C /* ImageOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F6A4F21B0454F200994F6C /* ImageOverlay.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +40,10 @@
 		01F6A4DC1B02F8B700994F6C /* PaddenTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PaddenTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		01F6A4E11B02F8B700994F6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		01F6A4E21B02F8B700994F6C /* PaddenTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddenTests.swift; sourceTree = "<group>"; };
+		01F6A4EC1B02F8CA00994F6C /* Padden.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Padden.png; sourceTree = "<group>"; };
+		01F6A4EE1B02F94000994F6C /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		01F6A4F01B03002C00994F6C /* OverlayRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverlayRenderer.swift; sourceTree = "<group>"; };
+		01F6A4F21B0454F200994F6C /* ImageOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageOverlay.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01F6A4EF1B02F94000994F6C /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +68,7 @@
 		01F6A4BE1B02F8B700994F6C = {
 			isa = PBXGroup;
 			children = (
+				01F6A4EE1B02F94000994F6C /* MapKit.framework */,
 				01F6A4C91B02F8B700994F6C /* Padden */,
 				01F6A4DF1B02F8B700994F6C /* PaddenTests */,
 				01F6A4C81B02F8B700994F6C /* Products */,
@@ -77,12 +87,15 @@
 		01F6A4C91B02F8B700994F6C /* Padden */ = {
 			isa = PBXGroup;
 			children = (
+				01F6A4EC1B02F8CA00994F6C /* Padden.png */,
 				01F6A4CC1B02F8B700994F6C /* AppDelegate.swift */,
 				01F6A4CE1B02F8B700994F6C /* ViewController.swift */,
 				01F6A4D01B02F8B700994F6C /* Main.storyboard */,
 				01F6A4D31B02F8B700994F6C /* Images.xcassets */,
 				01F6A4D51B02F8B700994F6C /* LaunchScreen.xib */,
 				01F6A4CA1B02F8B700994F6C /* Supporting Files */,
+				01F6A4F01B03002C00994F6C /* OverlayRenderer.swift */,
+				01F6A4F21B0454F200994F6C /* ImageOverlay.swift */,
 			);
 			path = Padden;
 			sourceTree = "<group>";
@@ -161,6 +174,11 @@
 				TargetAttributes = {
 					01F6A4C61B02F8B700994F6C = {
 						CreatedOnToolsVersion = 6.3.1;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					01F6A4DB1B02F8B700994F6C = {
 						CreatedOnToolsVersion = 6.3.1;
@@ -193,6 +211,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				01F6A4D21B02F8B700994F6C /* Main.storyboard in Resources */,
+				01F6A4ED1B02F8CA00994F6C /* Padden.png in Resources */,
 				01F6A4D71B02F8B700994F6C /* LaunchScreen.xib in Resources */,
 				01F6A4D41B02F8B700994F6C /* Images.xcassets in Resources */,
 			);
@@ -213,6 +232,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				01F6A4CF1B02F8B700994F6C /* ViewController.swift in Sources */,
+				01F6A4F11B03002C00994F6C /* OverlayRenderer.swift in Sources */,
+				01F6A4F31B0454F200994F6C /* ImageOverlay.swift in Sources */,
 				01F6A4CD1B02F8B700994F6C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

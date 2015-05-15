@@ -22,6 +22,12 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Because of reasons</string>
+	<key>NSLocationUsageDescription</key>
+	<string>To show your location on the map. </string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Because of other reasons</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
