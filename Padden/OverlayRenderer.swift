@@ -9,7 +9,7 @@
 import MapKit
 
 class OverlayRenderer: MKOverlayRenderer {
-    override func drawMapRect(mapRect: MKMapRect, zoomScale: MKZoomScale, inContext context: CGContext!) {
+    override func drawMapRect(mapRect: MKMapRect, zoomScale: MKZoomScale, inContext context: CGContext) {
         if let overlay = self.overlay as? ImageOverlay {
             let imageRef = overlay.image.CGImage
             

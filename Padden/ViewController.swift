@@ -12,6 +12,7 @@ import MapKit
 class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var alphaSlider: UISlider!
+	@IBOutlet weak var trackingModeControl: UISegmentedControl!
     var overlay: ImageOverlay!
     var overlayRenderer: OverlayRenderer!
     var locationManager: CLLocationManager!
@@ -40,7 +41,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         locationManager.startUpdatingLocation()
     }
     
-    func locationManager(manager: CLLocationManager!, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
         if status == CLAuthorizationStatus.AuthorizedWhenInUse {
             self.mapView.showsUserLocation = true
         }
@@ -50,12 +51,18 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         return .LightContent
     }
     
-    func mapView(mapView: MKMapView!, rendererForOverlay overlay: MKOverlay!) -> MKOverlayRenderer! {
+    func mapView(mapView: MKMapView, rendererForOverlay overlay: MKOverlay) -> MKOverlayRenderer! {
         return self.overlayRenderer
     }
     
     @IBAction func setAlpha(sender: UISlider) {
         self.overlayRenderer.alpha = CGFloat(sender.value)
     }
+	
+	@IBAction func changeTrackingMode(sender: UISegmentedControl) {
+		let modes: [MKUserTrackingMode] = [ .None, .Follow, .FollowWithHeading ]
+		
+		self.mapView.setUserTrackingMode(modes[sender.selectedSegmentIndex], animated: true)
+	}
 }
 

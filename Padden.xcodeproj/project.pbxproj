@@ -169,6 +169,8 @@
 		01F6A4BF1B02F8B700994F6C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = "Frank Schmitt";
 				TargetAttributes = {
@@ -432,6 +434,7 @@
 				01F6A4E81B02F8B700994F6C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		01F6A4E91B02F8B700994F6C /* Build configuration list for PBXNativeTarget "PaddenTests" */ = {
 			isa = XCConfigurationList;
@@ -440,6 +443,7 @@
 				01F6A4EB1B02F8B700994F6C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

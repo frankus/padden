@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15B17c" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -18,45 +19,59 @@
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="hybrid" translatesAutoresizingMaskIntoConstraints="NO" id="kYa-eK-1RH">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <animations/>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="BGz-OV-ScW"/>
                                 </connections>
                             </mapView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wYD-K6-sZk">
-                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
-                                <items>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="748-s9-9tM"/>
-                                    <barButtonItem style="plain" id="HyL-Aw-849">
-                                        <slider key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" id="zuw-Po-WmC">
-                                            <rect key="frame" x="14" y="7" width="304" height="31"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <connections>
-                                                <action selector="setAlpha:" destination="BYZ-38-t0r" eventType="valueChanged" id="g0P-aZ-JKq"/>
-                                            </connections>
-                                        </slider>
-                                    </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="p6i-rd-ZgB"/>
-                                </items>
-                            </toolbar>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="JYL-2N-WUV">
+                                <rect key="frame" x="16" y="564" width="568" height="29"/>
+                                <animations/>
+                                <segments>
+                                    <segment title="" image="TrackingLocationOffMask"/>
+                                    <segment title="" image="TrackingLocationMask"/>
+                                    <segment title="" image="TrackingHeadingMask"/>
+                                </segments>
+                                <connections>
+                                    <action selector="changeTrackingMode:" destination="BYZ-38-t0r" eventType="valueChanged" id="NVF-Dz-e0a"/>
+                                </connections>
+                            </segmentedControl>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="lzz-2L-fRu">
+                                <rect key="frame" x="14" y="28" width="572" height="31"/>
+                                <animations/>
+                                <connections>
+                                    <action selector="setAlpha:" destination="BYZ-38-t0r" eventType="valueChanged" id="ert-kZ-0Xd"/>
+                                </connections>
+                            </slider>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="lzz-2L-fRu" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="4C2-ch-P7e"/>
+                            <constraint firstItem="lzz-2L-fRu" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="6nw-ep-ugO"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="JYL-2N-WUV" secondAttribute="bottom" constant="8" id="Adg-1Y-GUu"/>
+                            <constraint firstAttribute="trailing" secondItem="lzz-2L-fRu" secondAttribute="trailing" constant="16" id="Gpe-nc-hah"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="kYa-eK-1RH" secondAttribute="bottom" id="I4J-c4-DoV"/>
                             <constraint firstItem="kYa-eK-1RH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="M5B-wZ-pi3"/>
+                            <constraint firstAttribute="trailing" secondItem="JYL-2N-WUV" secondAttribute="trailing" constant="16" id="OGS-Ht-niB"/>
                             <constraint firstItem="kYa-eK-1RH" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="WTq-O5-oi9"/>
-                            <constraint firstItem="wYD-K6-sZk" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Y52-Fk-BtT"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="wYD-K6-sZk" secondAttribute="bottom" id="fZg-52-rtz"/>
-                            <constraint firstAttribute="trailing" secondItem="wYD-K6-sZk" secondAttribute="trailing" id="kxz-Lo-98A"/>
+                            <constraint firstItem="JYL-2N-WUV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="rW6-e3-2dq"/>
                             <constraint firstAttribute="trailing" secondItem="kYa-eK-1RH" secondAttribute="trailing" id="slv-Z8-baf"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="alphaSlider" destination="zuw-Po-WmC" id="41b-Qp-jRk"/>
+                        <outlet property="alphaSlider" destination="lzz-2L-fRu" id="lMZ-U5-Mws"/>
                         <outlet property="mapView" destination="kYa-eK-1RH" id="0W0-kK-AOP"/>
+                        <outlet property="trackingModeControl" destination="JYL-2N-WUV" id="6VZ-Oz-2Na"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="TrackingHeadingMask" width="15" height="27"/>
+        <image name="TrackingLocationMask" width="23" height="23"/>
+        <image name="TrackingLocationOffMask" width="23" height="23"/>
+    </resources>
 </document>
